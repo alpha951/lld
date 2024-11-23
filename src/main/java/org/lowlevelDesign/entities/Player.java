@@ -25,6 +25,6 @@ public class Player {
     }
 
     public void updateHealth(int healthChange) {
-        this.health -= health;
+        this.health -= healthChange;
     }
 }
