@@ -41,7 +41,7 @@ public class GameTest {
         game.play();
 
         // Assert that player 1 wins
-        if (player1.isAlive() > 0 && !player2.isAlive()) {
+        if (player1.isAlive()  && !player2.isAlive()) {
             System.out.println("testPlay_FullGame_Player1Wins passed");
         } else {
             System.out.println("testPlay_FullGame_Player1Wins failed: Player 1 Health = " + player1.getHealth() +

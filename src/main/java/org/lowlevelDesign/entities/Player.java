@@ -28,7 +28,7 @@ public class Player {
         this.health -= healthChange;
     }
 
-    public void isAlive(){
+    public boolean isAlive(){
         return health > 0;
     }
 }
