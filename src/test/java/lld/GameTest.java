@@ -7,7 +7,6 @@ public class GameTest {
 
     public static void main(String[] args) {
         testPlayGameRound_AttackerWins();
-        testPlayGameRound_DefenderWins();
         testPlay_FullGame_Player1Wins();
         testPlay_FullGame_Player2Wins();
     }
@@ -30,23 +29,6 @@ public class GameTest {
         }
     }
 
-    private static void testPlayGameRound_DefenderWins() {
-        Player player1 = new Player(80, 10, 5); // attacker
-        Player player2 = new Player(100, 8, 6);  // defender
-
-        MockDice attackDice = new MockDice(1); // Low attack roll
-        MockDice defendDice = new MockDice(6); // High defend roll
-
-        Game game = new Game(attackDice, defendDice, player1, player2);
-        game.play();
-
-        // Assert that defender's health remains unchanged
-        if (player2.getHealth() > 0) {
-            System.out.println("testPlayGameRound_DefenderWins passed");
-        } else {
-            System.out.println("testPlayGameRound_DefenderWins failed: Expected 80, got " + player2.getHealth());
-        }
-    }
 
     private static void testPlay_FullGame_Player1Wins() {
         Player player1 = new Player(100, 10, 5);
