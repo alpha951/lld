@@ -22,7 +22,7 @@ public class GameTest {
         game.play();
 
         // Assert that defender's health is reduced
-        if (player2.getHealth() > 0) {
+        if (player2.isAlive()) {
             System.out.println("testPlayGameRound_AttackerWins passed");
         } else {
             System.out.println("testPlayGameRound_AttackerWins failed: Expected 74, got " + player2.getHealth());
@@ -41,7 +41,7 @@ public class GameTest {
         game.play();
 
         // Assert that player 1 wins
-        if (player1.getHealth() > 0 && player2.getHealth() <= 0) {
+        if (player1.isAlive() > 0 && !player2.isAlive()) {
             System.out.println("testPlay_FullGame_Player1Wins passed");
         } else {
             System.out.println("testPlay_FullGame_Player1Wins failed: Player 1 Health = " + player1.getHealth() +
@@ -61,7 +61,7 @@ public class GameTest {
         game.play();
 
         // Assert that player 2 wins
-        if (player2.getHealth() > 0 && player1.getHealth() <= 0) {
+        if (player2.isAlive() && !player1.isAlive()) {
             System.out.println("testPlay_FullGame_Player2Wins passed");
         } else {
             System.out.println("testPlay_FullGame_Player2Wins failed: Player 1 Health = " + player1.getHealth() +

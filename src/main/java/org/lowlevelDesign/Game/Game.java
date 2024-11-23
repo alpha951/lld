@@ -31,13 +31,13 @@ public class Game {
         Player defender = attacker == player1 ? player2 : player1;
 
         int count = 0;
-        while (attacker.getHealth() > 0 && defender.getHealth() > 0) {
+        while (attacker.isAlive() && defender.isAlive()) {
             playGameRound(attacker, defender);
             attacker = attacker == player1 ? player2 : player1;
             defender = attacker == player1 ? player2 : player1;
             count++;
         }
-        if (player1.getHealth() > 0) {
+        if (player1.isAlive()) {
             System.out.println("Player 1 wins");
         } else {
             System.out.println("Player 2 wins");

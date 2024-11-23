@@ -27,4 +27,8 @@ public class Player {
     public void updateHealth(int healthChange) {
         this.health -= healthChange;
     }
+
+    public void isAlive(){
+        return health > 0;
+    }
 }
